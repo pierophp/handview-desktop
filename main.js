@@ -23,6 +23,7 @@ function createWindow() {
 
     // Create the browser window.
     mainWindow = new BrowserWindow({
+        title: 'Hand View',
         width: width,
         height: height,
         webSecurity: false,
@@ -33,7 +34,7 @@ function createWindow() {
     });
 
     // and load the index.html of the app.
-    mainWindow.loadURL('http://localhost/handview');
+    mainWindow.loadURL('http://localhost/handview/index.php/desktop?url=http://localhost/handview');
 
     // Open the DevTools.
     //mainWindow.webContents.openDevTools();
@@ -54,12 +55,13 @@ function createWindow() {
         width = size.width;
         height = size.height;
 
-        var secondScreen = windowManager.createNew('second_screen', 'Hand View Tela Extendida', 'http://localhost/handview/index.php/second_screen', false, {
+        var secondScreen = windowManager.createNew('second_screen', 'Hand View Tela Extendida', 'http://localhost/handview/index.php/desktop?second_screen=1&url=' + encodeURIComponent('http://localhost/handview/index.php/second_screen'), false, {
             width: width,
             height: height,
+            position: [width, 0],
             fullscreen: true,
             useContentSize: true,
-            showDevTools: true,
+            showDevTools: false,
             webSecurity: false,
             webPreferences: {
                 sharedWorker: true
