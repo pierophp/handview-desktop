@@ -21,9 +21,12 @@ function createWindow() {
     var width = size.width;
     var height = size.height;
 
+    //var appIcon = new Tray('logo.png');
+
     // Create the browser window.
     mainWindow = new BrowserWindow({
         title: 'Hand View',
+        icon: 'logo.png',
         width: width,
         height: height,
         webSecurity: false,
@@ -69,7 +72,12 @@ function createWindow() {
         });
 
         secondScreen.open();
+        secondScreen.onReady(true, function (window) {
+            mainWindow.focus();
+        });
     }
+
+    mainWindow.focus();
 }
 
 // This method will be called when Electron has finished

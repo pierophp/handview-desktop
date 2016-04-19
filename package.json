@@ -1,18 +1,41 @@
 {
-  "name": "handview_desktop",
+  "name": "HandView",
   "version": "1.0.0",
   "description": "Cliente Desktop para o Hand View",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "postinstall": "install-app-deps",
+    "pack": "build",
+    "dist": "build"
   },
   "keywords": [],
   "author": "Piero",
   "license": "CC0-1.0",
   "devDependencies": {
+    "electron-builder": "^3.6.1",
     "electron-prebuilt": "^0.37.0"
   },
   "dependencies": {
     "electron-window-manager": "^1.0.1"
+  },
+  "build": {
+    "app-bundle-id": "org.handview",
+    "app-category-type": "public.app-category.graphics-design",
+    "osx": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    }
   }
 }
