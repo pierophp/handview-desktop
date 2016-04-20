@@ -2,11 +2,7 @@ version: 0.1.{build}
 
 platform:
   - x64
-
-environment:
-  GH_TOKEN:
-    secure: iSVmDGLvWisOvocYJIMvDZMpCb3s6MTTBryk9KPh/ZDLO8yMSl21U/uGFNmk4dKJ
-
+  
 cache:
   - node_modules
   - app\node_modules
@@ -18,7 +14,7 @@ deploy:
   description: 'Release description'
   provider: GitHub
   auth_token:
-    secure: <your encrypted token> # your encrypted token from GitHub
+    secure: iSVmDGLvWisOvocYJIMvDZMpCb3s6MTTBryk9KPh/ZDLO8yMSl21U/uGFNmk4dKJ
   artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
   draft: false
   prerelease: false
