@@ -7,7 +7,9 @@
     "start": "electron main.js",
     "postinstall": "install-app-deps",
     "pack": "build",
-    "dist": "build"
+    "dist": "build",
+    "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64"
+
   },
   "keywords": [],
   "author": "Piero",
@@ -22,6 +24,7 @@
   "build": {
     "app-bundle-id": "org.handview",
     "app-category-type": "public.app-category.graphics-design",
+    "iconUrl": "https://raw.githubusercontent.com/pierophp/handview-desktop/master/build/icon.ico",
     "osx": {
       "contents": [
         {
