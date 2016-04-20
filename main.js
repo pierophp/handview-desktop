@@ -36,8 +36,20 @@ function createWindow() {
         }
     });
 
+    var pjson = require('./package.json');
+    var electron_version = process.versions['electron'];
+    var chrome_version = process.versions['chrome'];
+    var app_version = pjson.version;
+    var main_url = 'http://localhost/handview/index.php/desktop';
+    main_url += '?electron_version=' + electron_version;
+    main_url += '&chrome_version=' + chrome_version;
+    main_url += '&app_version=' + app_version;
+    main_url += '&url=' + encodeURIComponent('http://localhost/handview');
+
+    console.log(main_url);
+
     // and load the index.html of the app.
-    mainWindow.loadURL('http://localhost/handview/index.php/desktop?url=http://localhost/handview');
+    mainWindow.loadURL(main_url);
 
     // Open the DevTools.
     //mainWindow.webContents.openDevTools();
