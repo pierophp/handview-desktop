@@ -1,0 +1,11 @@
+{
+  "name": "HandView",
+  "version": "1.0.0",
+  "description": "Cliente Desktop para o Hand View",
+  "author": "Piero",
+  "private": true,
+  "main": "./main.js",
+  "dependencies": {
+    "electron-window-manager": "^1.0.1"
+  }
+}

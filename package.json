@@ -2,9 +2,12 @@
   "name": "HandView",
   "version": "1.0.0",
   "description": "Cliente Desktop para o Hand View",
-  "main": "main.js",
   "scripts": {
-    "start": "electron main.js",
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "clean": "rimraf dist",
+    "clean:osx": "rimraf dist/HandView-darwin-x64",
+    "clean:win": "rimraf dist/win",
     "pack": "build",
     "dist": "build",
     "release": "build",
@@ -15,7 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron-builder": "^3.6.1",
-    "electron-prebuilt": "^0.37.0"
+    "electron-prebuilt": "^0.37.0",
+    "rimraf": "^2.5.2"
   },
   "dependencies": {
     "electron-window-manager": "^1.0.1"
