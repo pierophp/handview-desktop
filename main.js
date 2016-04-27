@@ -6,7 +6,7 @@ const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 
-var windowManager = require('electron-window-manager');
+let windowManager = require('electron-window-manager');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -14,12 +14,10 @@ let mainWindow;
 
 function createWindow() {
 
-    var screen = require('screen');
-
-    var size = screen.getPrimaryDisplay().size;
-
-    var width = size.width;
-    var height = size.height;
+    let screen = require('screen');
+    let size = screen.getPrimaryDisplay().size;
+    let width = size.width;
+    let height = size.height;
 
     //var appIcon = new Tray('logo.png');
 
@@ -36,17 +34,16 @@ function createWindow() {
         }
     });
 
-    var pjson = require('./package.json');
-    var electron_version = process.versions['electron'];
-    var chrome_version = process.versions['chrome'];
-    var app_version = pjson.version;
-    var main_url = 'http://localhost/handview/index.php/desktop';
+    let pjson = require('./package.json');
+    let electron_version = process.versions['electron'];
+    let chrome_version = process.versions['chrome'];
+    let app_version = pjson.version;
+
+    let main_url = 'http://localhost/handview/index.php/desktop';
     main_url += '?electron_version=' + electron_version;
     main_url += '&chrome_version=' + chrome_version;
     main_url += '&app_version=' + app_version;
     main_url += '&url=' + encodeURIComponent('http://localhost/handview');
-
-    console.log(main_url);
 
     // and load the index.html of the app.
     mainWindow.loadURL(main_url);

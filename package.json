@@ -7,6 +7,7 @@
     "start": "electron main.js",
     "pack": "build",
     "dist": "build",
+    "release": "build",
     "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64"
   },
   "keywords": [],
