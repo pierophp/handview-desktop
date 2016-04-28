@@ -13,9 +13,6 @@
     "release": "build",
     "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64"
   },
-  "keywords": [],
-  "author": "Piero",
-  "license": "CC0-1.0",
   "devDependencies": {
     "electron-builder": "^3.6.1",
     "electron-prebuilt": "^0.37.0",
