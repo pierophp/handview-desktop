@@ -48,10 +48,11 @@ script:
 - npm run dist
 before_deploy:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export RELEASE_PKG_FILE=$(ls dist/HandView-darwin-x64/*.dmg); fi
-  #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export RELEASE_PKG_FILE=$(ls dist/*.deb); fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export RELEASE_PKG_FILE=$(ls dist/*.deb); fi
   - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: VG1X4N05Hi46hJ84Ks81AURby4dh+LPInPVfVQUX4jw+EOSOoec4H6LE0Lq1uONQGBoWDxbjWP7NGxrS3+CDAyMiV8KDjUwbGqMxSs3YHGfh++/bIU79EnSQxOygjRhvF7Oc5pOki2AuyUWA9RTA/6UaxbsYe7c4tkjjWEH0bQxm6bNh1mKalPgz2Ru1aub1sKAGAUSDVmWi73dmV/xYMgdUxherP3RESEEP8iTaKl40DUcLt4eVfY8AlNHTMXpvbIJq85+snCsw9x/BBfX3enFGeOPnZpoYA6X0+6ZQXSgSUpchpvRoYnRp28rC8qZ9pQR6cpeJ2MShIXHZ9lTGHKkWdNop5psZDzTrgMJni0GmawliGHjHeBIMKTkxxpAWXc3io3NwqcKg9xoXCYMhE6fUvSSITLNWKkANO16hBvqWcvuHlZvT/nwgnXOfX/UQbbLjc0BP5RejU9oelMS7VBrW3ulZL7yH6cQJDdjpF0GkBzJUzXA1mutta7CuDLpPpmXdidboOjQqT5I5wl4Wc2NGdUw1Qy7/U4HcFrLk5SVSgQ9ikXfwYtW3LSVnWWaDkyqdzT/AHlDsaerhGMX0lYQDP1UsdmWkcaBPHoqK/OOS0ji3ugCXVCbNdZkLD8S1IuQ1sxDr6aR+ED6uT8CPElB1clAMQFiEWZGkhePiuAs=
   file_glob: true
