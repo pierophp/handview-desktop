@@ -15,7 +15,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: iSVmDGLvWisOvocYJIMvDZMpCb3s6MTTBryk9KPh/ZDLO8yMSl21U/uGFNmk4dKJ
-  artifact: /.*\.msi/ 
+  artifact: /.*\.msi/
   draft: false
   prerelease: false
   on:
@@ -36,6 +36,6 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
-  - move dist\win-x64\Setup.msi dist\win-x64\HandView-$(appveyor_build_version).msi
+  - move dist\win-x64\Setup.msi HandView-$(appveyor_build_version).msi
 
 test: off
