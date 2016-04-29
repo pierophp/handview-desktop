@@ -19,6 +19,8 @@ function createWindow() {
     let width = size.width;
     let height = size.height;
 
+    let mainBounds = screen.getPrimaryDisplay().bounds;
+
     //var appIcon = new Tray('logo.png');
 
     // Create the browser window.
@@ -27,6 +29,8 @@ function createWindow() {
         icon: 'logo.png',
         width: width,
         height: height,
+        x: mainBounds.x,
+        y: mainBounds.y,
         webSecurity: false,
         showDevTools: true,
         webPreferences: {
@@ -67,11 +71,22 @@ function createWindow() {
         width = size.width;
         height = size.height;
 
-        var secondScreen = windowManager.createNew('second_screen', 'Hand View Tela Extendida', 'http://localhost/handview/index.php/desktop?second_screen=1&url=' + encodeURIComponent('http://localhost/handview/index.php/second_screen'), false, {
+        let secondBounds = screen.getAllDisplays()[1].bounds;
+
+        let fullscreen = true;
+        if (process.platform == 'linux') {
+            fullscreen = true;
+        }
+
+        let secondScreen = windowManager.createNew('second_screen', 'Hand View Tela Extendida', 'http://localhost/handview/index.php/desktop?second_screen=1&url=' + encodeURIComponent('http://localhost/handview/index.php/second_screen'), false, {
             width: width,
             height: height,
-            position: [width, 0],
-            fullscreen: true,
+            x: secondBounds.x,
+            y: secondBounds.y,
+            skipTaskbar: true,
+            frame: true,
+            //position: [width, 0],
+            fullscreen: fullscreen,
             useContentSize: true,
             showDevTools: false,
             webSecurity: false,
