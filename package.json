@@ -41,9 +41,6 @@
       ]
     },
     "win": {
-      "iconUrl":"",
-      "setupIcon":"",
-      "loadingGif": "",
       "noMsi": false
     }
   }
