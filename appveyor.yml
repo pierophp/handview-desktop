@@ -1,4 +1,4 @@
-version: 0.1.{build}
+version: 1.0.0
 
 platform:
   - x64
@@ -10,12 +10,12 @@ cache:
   - '%USERPROFILE%\.electron'
 
 deploy:
-  release: handview-desktop-v$(appveyor_build_version)
+  release: v$(appveyor_build_version)
   description: 'Release description'
   provider: GitHub
   auth_token:
     secure: iSVmDGLvWisOvocYJIMvDZMpCb3s6MTTBryk9KPh/ZDLO8yMSl21U/uGFNmk4dKJ
-  artifact: /.*\.msi/            # upload all NuGet packages to release assets
+  artifact: dist\win-x64\HandView-$(appveyor_build_version).msi            # upload all NuGet packages to release assets
   draft: false
   prerelease: false
   on:
@@ -36,6 +36,6 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
-  - dir dist\win-x64
+  - move dist\win-x64\Setup.msi dist\win-x64\HandView-$(appveyor_build_version).msi
 
 test: off
