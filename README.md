@@ -1,9 +1,11 @@
 # Hand View Desktop
 
-Feito com o GitHub Electron
+O Hand View Desktop, foi feito com o GitHub Electron
 
-## Instalando dependências
-npm install
+## Iniciando o projeto
+npm start
 
 ## Gerando um pacote
 npm run dist
+
+(https://api.travis-ci.org/pierophp/handview-desktop.svg)
