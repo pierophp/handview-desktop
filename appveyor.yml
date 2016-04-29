@@ -15,7 +15,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: iSVmDGLvWisOvocYJIMvDZMpCb3s6MTTBryk9KPh/ZDLO8yMSl21U/uGFNmk4dKJ
-  artifact: dist\win-x64\HandView-$(appveyor_build_version).msi            # upload all NuGet packages to release assets
+  artifact: /.*\.msi/ 
   draft: false
   prerelease: false
   on:
