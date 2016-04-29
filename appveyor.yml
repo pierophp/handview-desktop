@@ -36,6 +36,6 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
-  - dir dist
+  - dir dist\win-x64
 
 test: off
