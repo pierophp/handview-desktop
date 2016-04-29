@@ -44,7 +44,7 @@
       "iconUrl":"",
       "setupIcon":"",
       "loadingGif": "",
-      "noMsi": "false"
+      "noMsi": false
     }
   }
 }
