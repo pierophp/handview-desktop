@@ -42,11 +42,13 @@ function createWindow() {
     let electron_version = process.versions['electron'];
     let chrome_version = process.versions['chrome'];
     let app_version = pjson.version;
+    let platform = process.platform;
 
     let main_url = 'http://localhost/handview/index.php/desktop';
     main_url += '?electron_version=' + electron_version;
     main_url += '&chrome_version=' + chrome_version;
     main_url += '&app_version=' + app_version;
+    main_url += '&platform=' + platform;
     main_url += '&url=' + encodeURIComponent('http://localhost/handview');
 
     // and load the index.html of the app.
