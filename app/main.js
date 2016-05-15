@@ -1,8 +1,10 @@
 'use strict';
 
 const electron = require('electron');
+
 // Module to control application life.
 const app = electron.app;
+
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 
@@ -14,7 +16,9 @@ let mainWindow;
 
 function createWindow() {
 
-    let screen = require('screen');
+    const {app, BrowserWindow, screen: screen} = require('electron');
+
+    //let screen = require('screen');
     let size = screen.getPrimaryDisplay().size;
     let width = size.width;
     let height = size.height;
