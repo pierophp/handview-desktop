@@ -14,8 +14,8 @@
     "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64"
   },
   "devDependencies": {
-    "electron-builder": "^3.6.1",
-    "electron-prebuilt": "^1.0.0",
+    "electron-builder": "^5.10.2",
+    "electron-prebuilt": "^1.2.5",
     "rimraf": "^2.5.2"
   },
   "dependencies": {
