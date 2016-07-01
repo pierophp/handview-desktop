@@ -10,7 +10,7 @@ cache:
   - '%USERPROFILE%\.electron'
 
 artifacts:
-  - path: dist\win-x64\*.msi
+  - path: dist\win\*.msi
     name: HandViewDesktop
 
 deploy:
@@ -40,7 +40,7 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
-  - dir dist
-  - move dist\win-x64\Setup.msi dist\win-x64\HandView-1.0.1-x64.msi
+  - dir dist\ win
+  - move dist\win\Setup.msi dist\win\HandView-1.0.1-x64.msi
 
 test: off
