@@ -41,7 +41,7 @@
       ]
     },
     "win": {
-      "noMsi": false
+      "msi": true
     }
   }
 }

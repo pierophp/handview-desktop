@@ -40,6 +40,7 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
+  - dir dist
   - move dist\win-x64\Setup.msi dist\win-x64\HandView-1.0.1-x64.msi
 
 test: off
