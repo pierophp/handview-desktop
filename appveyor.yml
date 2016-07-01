@@ -14,7 +14,7 @@ artifacts:
     name: HandViewDesktop
 
 deploy:
-  release: v1.0.0
+  release: v1.0.1
   description: 'Release description'
   provider: GitHub
   auth_token:
@@ -23,7 +23,7 @@ deploy:
   draft: false
   prerelease: false
   on:
-    branch: v1.0.0
+    branch: v1.0.1
     appveyor_repo_tag: true        # deploy on tag push only
 
 init:
@@ -40,6 +40,6 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
-  - move dist\win-x64\Setup.msi dist\win-x64\HandView-1.0.0-x64.msi
+  - move dist\win-x64\Setup.msi dist\win-x64\HandView-1.0.1-x64.msi
 
 test: off

@@ -1,6 +1,6 @@
 {
   "name": "HandView",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cliente Desktop para o Hand View",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -22,10 +22,10 @@
     "electron-window-manager": "^1.0.1"
   },
   "build": {
-    "app-bundle-id": "org.handview",
+    "appId": "org.handview",
     "app-category-type": "public.app-category.graphics-design",
     "iconUrl": "https://raw.githubusercontent.com/pierophp/handview-desktop/master/build/icon.ico",
-    "osx": {
+    "mac": {
       "contents": [
         {
           "x": 410,
