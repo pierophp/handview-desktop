@@ -69,7 +69,6 @@ function createWindow() {
         mainWindow = null;
     });
 
-
     if (screen.getAllDisplays().length > 1) {
 
         size = screen.getAllDisplays()[1].workAreaSize;
@@ -84,7 +83,12 @@ function createWindow() {
             fullscreen = true;
         }
 
-        let secondScreen = windowManager.createNew('second_screen', 'Hand View Tela Extendida', 'http://localhost/handview/index.php/desktop?second_screen=1&url=' + encodeURIComponent('http://localhost/handview/index.php/second_screen'), false, {
+        let secondUrl = 'http://localhost/handview/index.php/desktop?second_screen=1&url=' + encodeURIComponent('http://localhost/handview/index.php/second_screen');
+
+        /*
+
+
+        let secondScreen = windowManager.createNew('second_screen', 'Hand View Tela Extendida',secondUrl, false, {
             width: width,
             height: height,
             x: secondBounds.x,
@@ -105,6 +109,30 @@ function createWindow() {
         secondScreen.onReady(true, function (window) {
             mainWindow.focus();
         });
+
+        */
+
+        let secondScreen = new BrowserWindow({
+            width: width,
+            height: height,
+            x: secondBounds.x,
+            y: secondBounds.y,
+            skipTaskbar: true,
+            fullscreen: fullscreen,
+            webSecurity: false,
+            showDevTools: true,
+            webPreferences: {
+                sharedWorker: true
+            }
+        });
+
+        secondScreen.on('enter-full-screen', function () {
+            secondScreen.focus();
+            mainWindow.focus();
+        });
+
+        secondScreen.loadURL(secondUrl);
+
     }
 
     mainWindow.focus();
